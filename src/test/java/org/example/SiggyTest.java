@@ -21,6 +21,7 @@ public class SiggyTest extends Base
         findelementbyxpath("//*[text()='Search']").click();
         findelementbyxpath("//input[@type='text']").sendKeys("biriyani");
         findelementbyxpath("//button[@data-testid='autosuggest-item']").click();
+        
     }
 
 }
