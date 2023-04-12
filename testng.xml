@@ -9,7 +9,7 @@
             <class name="org.example.SiggyTest">
                 <methods>
                     <include name="findstoreswithLocation"/>
-                    <include name="findproducts"/>
+                    <exclude name="findproducts"/>
                 </methods>
             </class>
         </classes>

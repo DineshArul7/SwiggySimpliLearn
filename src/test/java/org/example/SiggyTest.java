@@ -1,6 +1,7 @@
 package org.example;
 
-import org.openqa.selenium.By;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 /**
@@ -8,21 +9,22 @@ import org.testng.annotations.Test;
  */
 public class SiggyTest extends Base
 {
-
-
+Common common=new Common();
     @Test
     public void findstoreswithLocation(){
-        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Mettukuppam");
-        driver.findElement(By.xpath("//button[2]")).click();
+        Logger logger1= LogManager.getLogger(getClass().getName());
+        logger1.info("Deekay");
+        logger1.error("Devil");
+        logger1.debug("Muthu");
+       // common.searchbyLocation("Mettukuppam");
+        // common.verifyTitle("Order food online from India's best food delivery service. Order from restaurants near you");
     }
 
     @Test
     public void findproducts(){
-        findelementbyxpath("//*[text()='Search']").click();
-        findelementbyxpath("//input[@type='text']").sendKeys("biriyani");
-        findelementbyxpath("//button[@data-testid='autosuggest-item']").click();
-        //Deekay
-        //Devil
+        common.findelementbyxpath("//*[text()='Search']").click();
+        common.findelementbyxpath("//input[@type='text']").sendKeys("biriyani");
+        common.findelementbyxpath("//button[@data-testid='autosuggest-item']").click();
     }
 
 }

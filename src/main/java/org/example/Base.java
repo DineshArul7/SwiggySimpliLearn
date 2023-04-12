@@ -1,13 +1,11 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.util.TimeUtils;
 
-import java.sql.Time;
 import java.time.Duration;
 
 /**
@@ -17,6 +15,7 @@ import java.time.Duration;
 public class Base
 {
    static WebDriver driver;
+   static Logger logger;
 
     public void initializeDriver(){
         WebDriverManager.chromedriver().setup();
@@ -26,7 +25,13 @@ public class Base
         driver.get("https://www.swiggy.com/");
     }
 
-    public WebElement findelementbyxpath(String xpath){
-      return   driver.findElement(By.xpath(xpath));
+    public void tearDownDriver(){
+        driver.quit();;
+    }
+
+
+
+    public void initializeLogger(String testName){
+        logger= LogManager.getLogger(getClass().getName());
     }
 }
