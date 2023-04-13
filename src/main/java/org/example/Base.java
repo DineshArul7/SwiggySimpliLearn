@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -17,6 +18,7 @@ public class Base
    static WebDriver driver;
    static Logger logger;
 
+
     public void initializeDriver(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
@@ -26,12 +28,12 @@ public class Base
     }
 
     public void tearDownDriver(){
-        driver.quit();;
+        driver.close();
     }
 
 
 
     public void initializeLogger(String testName){
-        logger= LogManager.getLogger(getClass().getName());
+        logger= LogManager.getLogger(testName);
     }
 }

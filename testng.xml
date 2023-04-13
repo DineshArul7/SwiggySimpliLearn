@@ -7,10 +7,6 @@
     <test verbose="2" preserve-order="true" name="D:/Dinesh_Arul/Automation_Projects/UI/Receipts/SwiggySimpliLearn">
         <classes>
             <class name="org.example.SiggyTest">
-                <methods>
-                    <include name="findstoreswithLocation"/>
-                    <exclude name="findproducts"/>
-                </methods>
             </class>
         </classes>
     </test>

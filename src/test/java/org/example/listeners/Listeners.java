@@ -9,13 +9,14 @@ public class Listeners implements ITestListener {
  Base base=new Base();
     @Override
     public  void onTestStart(ITestResult result) {
-     //   base.initializeDriver();
-      //  base.initializeLogger(result.getTestName());
+        base.initializeDriver();
+        base.initializeLogger(result.getName());
 
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
+
       //  base.tearDownDriver();
     }
 
@@ -41,7 +42,7 @@ public class Listeners implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        ITestListener.super.onStart(context);
+
     }
 
     @Override
