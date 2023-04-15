@@ -100,10 +100,9 @@ public class Excel {
             if (count > 0) {
                 for (int i = 0; i < firstrow.size(); i++) {
                     map.put(firstrow.get(i), restRow.get(i));
-                }
-               // if (map.get("Execute").equalsIgnoreCase("yes")) {
+                }if (map.get("Execute").equalsIgnoreCase("yes")) {
                     list.add(map);
-                //}
+                }
             }
             count++;
         }
