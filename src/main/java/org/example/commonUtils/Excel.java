@@ -60,7 +60,7 @@ public class Excel {
 
     }
 
-    public List<Map<String, String>> readExcel(String SheetName) {
+    public List<Map<String, String>> readExcel(String SheetName,String methodName) {
 
         try {
             fis = new FileInputStream(new File(pathout));
@@ -100,7 +100,7 @@ public class Excel {
             if (count > 0) {
                 for (int i = 0; i < firstrow.size(); i++) {
                     map.put(firstrow.get(i), restRow.get(i));
-                }if (map.get("Execute").equalsIgnoreCase("yes")) {
+                }if (map.get("Execute").equalsIgnoreCase("yes") && map.get("Test Script Name").equalsIgnoreCase(methodName)) {
                     list.add(map);
                 }
             }

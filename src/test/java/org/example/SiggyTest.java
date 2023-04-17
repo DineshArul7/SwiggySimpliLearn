@@ -19,19 +19,18 @@ public class SiggyTest extends Base
 {
 Common common=new Common();
 
-
-    public void findstoreswithLocation(){
-        logger.info("Deekay");
-        logger.error("Devil");
-        logger.debug("Muthu");
-        common.searchbyLocation("Mettukuppam");
+    @Test(dataProvider = "data", dataProviderClass = DataProviderdata.class)
+    public void findstoreswithLocation(Object[] data){
+        Map<String, String> map = (Map<String, String>) data[0];
+        common.searchbyLocation(map.get("Location"));
         common.verifyTitle("Order food online from India's best food delivery service. Order from restaurants near you");
     }
 
-
-    public void findproducts(){
-        common.searchbyLocation("Mettukuppam");
-        common.searchForProducts("Biriyani");
+    @Test(dataProvider = "data", dataProviderClass = DataProviderdata.class)
+    public void findproducts(Object[] data){
+        Map<String, String> map = (Map<String, String>) data[0];
+        common.searchbyLocation(map.get("Location"));
+        common.searchForProducts(map.get("Product"));
         common.verifyTitle("Order food online from India's best food delivery service. Order from restaurants near you");
     }
     @Test(dataProvider = "data", dataProviderClass = DataProviderdata.class)

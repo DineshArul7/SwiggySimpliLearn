@@ -17,7 +17,7 @@ public class DataProviderdata {
        List<Map<String,String>> list=null;
 
 
-            list=excel.readExcel("SwiggySimpliLearn");
+            list=excel.readExcel("SwiggySimpliLearn", name.getName());
 
        Object[][] data=new Object[list.size()][1];
        int count=0;

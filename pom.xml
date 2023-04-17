@@ -88,6 +88,20 @@
       <version>20230227</version>
     </dependency>
 
+    <!-- Rest Assured Dependencies -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>5.3.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>json-path</artifactId>
+      <version>5.3.0</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>
@@ -113,6 +127,7 @@
           <configuration>
             <suiteXmlFiles>
               <suiteXmlFile>testng.xml</suiteXmlFile>
+              <suiteXmlFile>testngRestAssured.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
         </plugin>
